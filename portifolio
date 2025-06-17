@@ -1,0 +1,498 @@
+Index.html: 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">Meu Portfólio</a>
+                <ul class="nav-links">
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Abrir Menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <h1>Olá, eu sou <span>Anna Beatriz</span></h1>
+                <p>Desenvolvedora Web | Criadora de Experiências Digitais</p>
+                <a href="#contact" class="btn-primary">Entrar em Contato</a>
+            </div>
+        </section>
+
+
+        <section id="about" class="about-section container">
+            <h2>Sobre Mim</h2>
+            <p>Sou uma estudante ambiciosa</p>
+        </section>
+
+
+        <section id="projects" class="projects-section container">
+            <h2>Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Carros Automáticos</h3>
+                    <p>Fiz um jogo de carros automáticos sem precisar clicar várias vezes em uma tecla específica, utilizei apenas o p5.js editor e obti de forma satisfatória, o que descrevi anteriormente, carros correndo de velociade aleatória em uma linha e quando ultrapassam uma linha específica, aparece a mensagem de que ganhou.</p>
+                    <a href="https://editor.p5js.org/Seboso/sketches/M-KOZKMd6w" class="btn-secondary" target="_blank" rel="noopener">Ver Projeto</a>
+                </div>
+                <div class="project-card">
+                    <h3>Corrida por cliques</h3>
+                    <p>Eu criei um jogo de corrida de toques seguidos para parecer uma corrida, os botões para  jogar são: SDFG, e para reiniciar é R. E obti de forma satisfatória, o que descrevi anteriormente, andando de forma retilinea em uma linha e quando ultrapassam uma linha específica, aparece a mensagem de que ganhou.</p>
+                    <a href="https://editor.p5js.org/Seboso/sketches/vm5Dr0-2qo" class="btn-secondary" target="_blank" rel="noopener">Ver Projeto</a>
+                </div>
+                <div class="project-card">
+                    <h3>Caça ao  tesouro</h3>
+                    <p>Uma grande bola branca aparece em volta do seu mouse, e voce tem que achar um ponto específico para achar, e quando acha, aparece umammensagem de "encontrei" e logo em seguida, o jogo acaba.utilizei apenas o p5.js editor e obti de forma satisfatória, o que descrevi anteriormente.</p>
+                    <a href="https://editor.p5js.org/Seboso/sketches/dGnEXxmm0" class="btn-secondary" target="_blank" rel="noopener">Ver Projeto</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contact" class="contact-section container">
+            <h2>Contato</h2>
+            <form id="contact-form">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required />
+               
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+               
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+               
+                <button type="submit" class="btn-primary">Enviar</button>
+            </form>
+            <div id="form-message" class="form-message"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2025 Anna Bia e Companhia. Todos os direitos retirados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+Styles.css: 
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+
+/* Reset and basics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* Header & Navigation */
+header {
+    background-color: #0d6efd;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+
+.logo {
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: white;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+    color: #ffc107;
+}
+
+
+/* Hamburger Button */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.nav-toggle:focus {
+    outline: 2px solid #ffc107;
+    outline-offset: 3px;
+}
+
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+
+.hamburger::before,
+.hamburger::after {
+    position: relative;
+    width: 100%;
+}
+
+
+.hamburger::before {
+    top: -6px;
+}
+
+
+.hamburger::after {
+    top: 6px;
+}
+
+
+.nav-toggle.open .hamburger {
+    background-color: transparent;
+}
+
+
+.nav-toggle.open .hamburger::before {
+    transform: rotate(45deg) translate(5px, 5px);
+    top: 0;
+}
+
+
+.nav-toggle.open .hamburger::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+    top: 0;
+}
+
+
+/* Show mobile nav */
+.nav-links-visible {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #0d6efd;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0 0 0 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+
+.nav-links-visible li {
+    margin-bottom: 1rem;
+}
+
+
+.nav-links-visible li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(13, 110, 253, 0.85), rgba(13, 110, 253, 0.85)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+    color: white;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+
+.hero-content h1 span {
+    color: #ffc107;
+}
+
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+
+.btn-primary {
+    background-color: #ffc107;
+    color: #0d6efd;
+    padding: 0.85rem 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #e0a800;
+    outline: none;
+}
+
+
+/* Sections */
+section {
+    padding: 4rem 0;
+}
+
+
+h2 {
+    text-align: center;
+    color: #0d6efd;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+
+/* About Section */
+.about-section p {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #555;
+}
+
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+}
+
+
+.project-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.project-card:hover,
+.project-card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+
+.project-card h3 {
+    margin-bottom: 1rem;
+    color: #0d6efd;
+}
+
+
+.project-card p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+
+.btn-secondary {
+    background-color: transparent;
+    color: #0d6efd;
+    border: 2px solid #0d6efd;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #0d6efd;
+    color: white;
+    outline: none;
+}
+
+
+/* Contact Section */
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.contact-section label {
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+
+.contact-section input,
+.contact-section textarea {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+    font-family: inherit;
+}
+
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border-color: #ffc107;
+    outline: none;
+}
+
+
+.contact-section .btn-primary {
+    align-self: start;
+}
+
+
+.form-message {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* Footer */
+footer {
+    background-color: #0d6efd;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+
+    .nav-links {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+Script.js: 
+formMessage.style.color = 'red';
+return;
+
+
+// Basic email format validation
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailPattern.test(email)) {
+formMessage.textContent = 'Por favor, insira um email válido.';
+formMessage.style.color = 'red';
+return;
+}
+// Simulate form submit success
+formMessage.textContent = 'Mensagem enviada com sucesso! Obrigado.';
+formMessage.style.color = 'green';
+// Clear form fields
+form.reset();
+// Remove message after some time
+setTimeout(() => {
+formMessage.textContent = '';
+}, 5000);
+
+
